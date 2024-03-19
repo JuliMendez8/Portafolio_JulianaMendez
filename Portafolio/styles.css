@@ -1,0 +1,485 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+body{
+    background-color: #0a0a0a;
+}
+
+/*Header styles*/
+header{
+    background-color: #141618;
+}
+
+.main_menu{
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main_menu nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main_menu nav li{
+    display:inline-block;
+    margin-right: 20px;
+}
+
+.main_menu nav a, .logo a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+}
+
+.main_menu nav a:hover{
+    font-size: 28px;
+}
+
+/* ---------------------------------------------Octagon Menu styles--------------------------------------*/
+
+.octagon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.menu_octagon{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_octagon li{
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transform-origin: 130px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--I));
+    transform: rotate(0deg) translateX(100px);
+}
+
+.menu_octagon.active li{
+    transform: rotate(calc(360deg / 6 * var(--i)));
+}
+
+.menu_octagon li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-size: 3.5em;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -6 * var(--i)));
+    color: transparent;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.menu_octagon.active li a{
+    color: var(--clr);
+}
+
+.menu_octagon li a::after{
+    content: '';
+    position: absolute;
+    left: 50xp;
+    width: 30px;
+    height: 2px;
+    background: var(--clr);
+    z-index: -1;
+    transform: rotate(calc(var(--i) * 0deg)) translate(15px, 0px);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.menu_octagon.active li a::after{
+    left: 5px;
+    width: 50px;
+    transition-delay: 0.5s;
+    transform: rotate(calc(var(--i) * 60deg)) translate(50px, 0px);
+}
+
+.menu_octagon.active li a:hover{
+    color: transparent;
+    transition: 0.5s;
+}
+
+.menu_octagon.active li a:hover::after{
+    content: attr(data-text);
+    transform: rotate(360deg);
+    transition: 0.5s;
+    font-size: 20px;
+    color: var(--clr);
+}
+
+.menuToggle{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 50;
+    cursor: pointer;
+    font-size: 2em;
+    transition: transform 1.5s;
+}
+
+.menu_octagon.active .menuToggle{
+    transform: rotate(315deg);
+}
+
+/* --------------------------------Main section styles -----------------------------------*/
+
+.main_information{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.gradient-titles{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 15px;
+    position: relative;
+    font-size: 5em;
+    color: #222;
+    background: linear-gradient(90deg, #0f0, #1899ff, #f0f, #f00, #ff0);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.02em transparent;
+}
+
+.gradient-titles::before{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    color: #222;
+    background: linear-gradient(90deg, #0f0, #1899ff, #f0f, #f00, #ff0);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.02em transparent;
+    transform: translate(-10px, -10px);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.gradient-titles::after{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    color: #222;
+    background: linear-gradient(90deg, #0f0, #1899ff, #f0f, #f00, #ff0);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.02em transparent;
+    transform: translate(-20px, -20px);
+    z-index: -1;
+    opacity: 0.25;
+}
+
+section{
+    background-color: #141618;
+    width: 60%;
+    height: 330px;
+}
+
+.personalInfoIndex{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    margin: 0 20px 20px 0;
+}
+
+.personal_image{
+    width: 270px;
+    height: auto;
+    border-radius: 130px;
+    margin: 30px;
+    border: 3px white solid;
+}
+
+.personalText{
+    color: white;
+    width: 60%;
+    height: auto;
+    margin-top: 20px;
+    padding: 20px;
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    transform: translate(-46%, -30%);
+    border-top: 2px white solid;
+    border-right: 2px white solid;
+    text-align: left;
+}
+
+.formContactMe{
+    align-self: flex-end;
+    margin: 20px 0 20px 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contactMeMessage{
+    margin: 20px;
+    color: white;
+    width: 60%;
+    text-align: left;
+}
+
+.contactMeMessage h2{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.myForm{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    width: 40%;
+    height: 90%;
+    margin: auto;
+    margin-right: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid rgba(59, 57, 57, 0.271) 1px;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.myForm label{
+    font-family: 'Poppins', sans-serif;
+}
+
+.myForm input, textarea{
+    width: 60%;
+    margin-bottom: 20px;
+    border-radius: 0;
+    height: 10%;
+}
+
+#message{
+    height: 20%;
+}
+
+/* STUDIES */
+#studies, #otherCertificates{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.eachStudy{
+    display: flex;
+    flex-direction: row;
+}
+
+.eachCertificate{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.eachStudy .studyInfo{
+    border: 2px white solid;
+    border-left: 0;
+    margin-left: 10px;
+    padding: 5px;
+    width: 80%;
+}
+
+.eachCertificate .studyInfo{
+    border: 2px white solid;
+    border-right: 0;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+/*-----------------------------------------------INTERESTS----------------------------------------------------*/
+
+#interests{
+    align-self: center;
+    margin: 20px 0 20px 20px;
+    padding: 20px;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.interestsSkills{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.interestsSkills div{
+    width: 50%;
+}
+
+.progressBar{
+    position: relative;
+    width: 200px;
+    height: 20px;
+    background-color: white;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+.progressBar::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bar-color);
+    transform: translateX(-100%);
+    animation: fill-bar 0.8s 0.3s ease-in-out forwards;
+}
+
+@keyframes fill-bar{
+    to{
+        transform: translateX(var(--fill-size));
+    }
+}
+
+/*------------------------------------------------------------------PROYECTS--------------------------------*/
+
+#proyects{
+    align-self: center;
+    margin: 20px 0 20px 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+    width: 80%;
+}
+
+#proyects figure{
+    position: relative;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 15px 25px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+#proyects figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+
+#proyects figure .proyectText{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(58, 70, 72, 0.7);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+#proyects figure .proyectText a{
+    text-decoration: none;
+    color: white;
+}
+
+#proyects figure:hover > .proyectText{
+    opacity: 1;
+    visibility: visible;
+}
+
+#proyects figure:hover img{
+    transform: scale(1.3);
+}
+
+/*-------------------------------------------------CONTACT ME ---------------------------------------*/
+
+#contact{
+    align-self: center;
+    margin: 20px 0 20px 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+#contact figure{
+    position: relative;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 130px;
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    margin: 30px;
+}
+
+#contact figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+
+#contact figure .contactText{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(91, 135, 144, 0.7);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+#contact figure:hover > .contactText{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* -------------------------------------- Footer styles --------------------------------------- */
+footer{
+    background-color: #141618;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer a{
+    color: white;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- color para los section #141618 -->
+    <header class="main_menu">
+        <div class="logo">
+            <a href="index.html"><ion-icon name="server-sharp"></ion-icon></a>
+            <a href="index.html">Juliana Méndez</a>
+        </div>
+    </header>
+    <main class="main_information">
+        <section class="personalInfoIndex" style="margin-top: 20px;">
+            <img class="personal_image" src="imgs/imgPersonal.jpeg" alt="personalImage">
+            <div class="personalText">
+                <h2>Juliana Méndez</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente maiores libero necessitatibus 
+                autem atque repellat voluptatibus corporis magnam. Impedit soluta nihil saepe labore, sed consequatur 
+                officiis natus. Facilis, architecto corporis. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing 
+                elit. Nam culpa saepe inventore maxime itaque temporibus? Ratione, debitis quia mollitia quo dignissimos 
+                aspernatur natus nobis voluptas, numquam veritatis sapiente velit labore.</p>
+            </div>
+        </section>
+
+        <nav class="octagon">
+            <ul class="menu_octagon">
+                <div class="menuToggle"><ion-icon name="add-outline"></ion-icon></div>
+                <li style="--i:1; --clr: #ff2972;"><a href="index.html" title="HOME" data-text="HOME"><ion-icon name="home-outline"></ion-icon></a></li>
+                <li style="--i:5; --clr: #00b0fe;"><a href="studies.html" title="STUDIES" data-text="STUDIES"><ion-icon name="ribbon-outline"></ion-icon></a></li>
+                <li style="--i:3; --clr: #04fc43;"><a href="interests.html" title="INTERESTS" data-text="INTERESTS"><ion-icon name="analytics-outline"></ion-icon></a></li>
+                <li style="--i:2; --clr: #fee800;"><a href="proyects.html" title="PROYECTS" data-text="PROYECTS"><ion-icon name="code-outline"></ion-icon></a></li>
+                <li style="--i:4; --clr: #fe00f1;"><a href="contactMe.html" title="CONTACT ME" data-text="CONTACT ME"><ion-icon name="mail-outline"></ion-icon></a></li>
+                <li style="--i:6; --clr: #fea600;"><a href="https://github.com/JuliMendez8/Portafolio_JulianaMendez" data-text="GITHUB" target="_blank" title="GITHUB"><ion-icon name="logo-github"></ion-icon></a></li>
+                
+            </ul>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <script>
+                let menuToggle = document.querySelector('.menuToggle');
+                let menu_octagon = document.querySelector('.menu_octagon');
+                menuToggle.onclick = function(){
+                    menu_octagon.classList.toggle('active');
+                }
+            </script>
+        </nav>
+
+        <section class="formContactMe">
+            <div class="contactMeMessage">
+                <h2>TALK WITH ME</h2>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit assumenda aspernatur est, dolorem 
+                hic impedit accusantium et repellat. Nesciunt dolorum, consectetur in ad quis maxime corporis eos odit 
+                labore sequi. <br><br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam obcaecati sequi 
+                consectetur totam nesciunt atque adipisci ab ad iusto corrupti! Debitis minus corrupti reiciendis nihil 
+                ut quas voluptatem minima est?</p>
+            </div>
+            <form class="myForm" method="post" action='send.php'>
+                <label for="name">FULL NAME:</label>
+                <input type="text" name="name" id="name" placeholder="">
+                
+                <label for="email">EMAIL:</label>
+                <input type="email" name="email" id="email" placeholder="">
+                
+                <label for="message">MESSAGE:</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+    
+                <button type="submit">SEND</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <br>
+        <hr>
+        <br>
+        <p>Juliana Méndez</p>
+        <a href="https://www.facebook.com/juli.mendez.169?mibextid=ZbWKwL" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://github.com/JuliMendez8/Portafolio_JulianaMendez" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+        <a href="https://www.instagram.com/july_mendez_88?igsh=ZTBnYndyMDR5MGhu" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+    </footer>
+</body>
+</html>
